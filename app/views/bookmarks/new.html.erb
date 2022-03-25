@@ -1,0 +1,15 @@
+<h1 class="text-center">Add a bookmark</h1>
+
+
+<div class="container">
+  <%= simple_form_for [@list, @bookmark] do |l| %>
+    <select id="movie_id" name="movie_id" class="form-select" aria-label="Default select example">
+    <option selected>Select a movie</option>
+    <%= @movies.each do |movie| %>
+      <option value=<%= movie.id %>><%= movie.title %></option>
+    <% end %>
+    </select>
+    <%= l.input :comment %>
+    <%= l.submit class: "btn btn-success"%>
+  <%end%>
+</div>
